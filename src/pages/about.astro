@@ -1,4 +1,24 @@
 ---
+import '../styles/global.css';
+const pageTitle = "Sobre mí";
+
+const identity = {
+    firstName: "Adrián",
+    lastName: "González",
+    country: "España",
+    occupation: "Wordpress Developer",
+    hobbies: ["los videojuegos", "el volley", "Mecánica"]
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Wordpress", "working on Astro"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 
 ---
 
@@ -8,16 +28,46 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Tutorial de Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Inicio</a>
         <a href="/about">Sobre Mí</a>
         <a href="/blog">Blog</a>
-		<h1>Sobre mí</h1>
+		<h1>{pageTitle}</h1>
+
+        <h3>Algunas cosas sobre mí:</h3>
+        <ul>
+            <li>Mi nombre es {identity.firstName} {identity.lastName}.</li>
+            <li>Nací en {identity.country} y trabajo como {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 && 
+                <li>Dos de mis hobbies son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>Algunas de mis habilidades como desarrollador son:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+
+        {happy && <p>¡Soy feliz aprendiendo Astro!</p>}
+        {finished && <p>He terminado este tutorial!</p>}
+        {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no es acabar en 3 días.</p>}
+
         <h2>Mi primera página creada con Astro</h2>
         <p>Soy Adrián González, actualmente desarrollador en Wordpress.</p>
         <p>Empecé a pensar en montar una web con Astro con el objetivo de montar un web blog con buen rendimiento, ya que los editores de Wordpress como Divi o Elementor quitan mucho rendimiento a las webs.</p>
         <p>El objetivo es crear un blog Headless y aprender en el proceso Astro y Tailwind</p>    
     </body>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+            color: purple;
+            font-size: 4rem;
+        }
+
+        .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
+        }
+    </style>
 </html>
