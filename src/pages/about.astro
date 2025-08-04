@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const pageTitle = "Sobre mí";
 
@@ -31,9 +33,7 @@ const textCase = "uppercase";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Inicio</a>
-        <a href="/about">Sobre Mí</a>
-        <a href="/blog">Blog</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
 
         <h3>Algunas cosas sobre mí:</h3>
@@ -56,7 +56,8 @@ const textCase = "uppercase";
         <h2>Mi primera página creada con Astro</h2>
         <p>Soy Adrián González, actualmente desarrollador en Wordpress.</p>
         <p>Empecé a pensar en montar una web con Astro con el objetivo de montar un web blog con buen rendimiento, ya que los editores de Wordpress como Divi o Elementor quitan mucho rendimiento a las webs.</p>
-        <p>El objetivo es crear un blog Headless y aprender en el proceso Astro y Tailwind</p>    
+        <p>El objetivo es crear un blog Headless y aprender en el proceso Astro y Tailwind</p> 
+        <Footer />
     </body>
     <style define:vars={{skillColor, fontWeight, textCase}}>
         h1 {

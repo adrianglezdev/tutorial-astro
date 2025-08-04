@@ -1,6 +1,9 @@
 ---
-const pageTitle = "Blog"
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+const pageTitle = "Blog"
+
 ---
 
 <html lang="en">
@@ -12,9 +15,7 @@ import '../styles/global.css';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Inicio</a>
-        <a href="/about">Sobre Mí</a>
-        <a href="/blog">Blog</a>
+		<Navigation />
 		<h1>{pageTitle}</h1>
 		<p>Esta será la página donde añadiremos el contenido principal del blog.</p>
         <p>Seguramente en el futuro simplemente sea todo el histórico de entradas y la página de inicio es donde saldrán las entradas más importantes</p>
@@ -23,5 +24,6 @@ import '../styles/global.css';
             <li><a href="/posts/post-2">Segundo Post</a></li>
             <li><a href="/posts/post-3">Tercer Post</a></li>
         </ul>
+        <Footer />
 	</body>
 </html>

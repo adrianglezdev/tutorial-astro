@@ -1,6 +1,12 @@
 ---
-const pageTitle = "Adrián González | Blog"
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+
 import '../styles/global.css';
+
+const pageTitle = "Adrián González | Blog";
+
 ---
 
 <html lang="en">
@@ -12,10 +18,9 @@ import '../styles/global.css';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Inicio</a>
-        <a href="/about">Sobre Mí</a>
-		<a href="/blog">Blog</a>
+		<Navigation />
 		<h1>{pageTitle}</h1>
 		<p>Este es el inicio de mi sitio web con Astro.</p>
+		<Footer />
 	</body>
 </html>
