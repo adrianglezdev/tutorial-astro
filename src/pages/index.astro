@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 
@@ -18,9 +18,13 @@ const pageTitle = "Adrián González | Blog";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 		<h1>{pageTitle}</h1>
 		<p>Este es el inicio de mi sitio web con Astro.</p>
 		<Footer />
+		
+	<script>
+		import "../scripts/menu.js";
+	</script>
 	</body>
 </html>
