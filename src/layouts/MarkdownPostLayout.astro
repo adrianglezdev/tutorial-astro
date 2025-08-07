@@ -1,0 +1,43 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from"../layouts/BaseLayout.astro";
+
+import '../styles/global.css';
+
+const { frontmatter} = Astro.props;
+const bgUrl = `url('${frontmatter.image.url}')`;
+const pageTitle = frontmatter.title;
+---
+<BaseLayout>
+<button class="btn_back_to_blog" onclick="history.back()" aria-label="Volver atrás">Volver
+</button>
+<div class="hero">
+    <h1>{pageTitle}</h1>
+</div>
+
+<div id="post_data">
+    <p>{frontmatter.author}</p>
+    <p>-</p>
+    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+</div>
+<p>{frontmatter.description}</p>
+<slot />
+</BaseLayout>
+<style define:vars={{ bgImage: bgUrl }}>
+    .btn_back_to_blog {
+        font-weight: bold;
+        text-decoration: none;
+        background-color: lightblue;
+        padding: 16px;
+        border-width: 0px;
+    }
+
+    .hero{
+        background-image: var(--bgImage);
+        padding: 100px;
+        width: 100%;
+        color: white;
+        
+    }
+</style>

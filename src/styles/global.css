@@ -81,3 +81,18 @@ h1 {
   }
 
 }
+
+
+/* POST STYLE */
+
+#post_data{
+  display: flex;
+  color: purple;
+  
+}
+
+#post_data p{
+  padding: 0px;
+  padding-right: 16px;
+  
+}

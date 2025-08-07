@@ -1,7 +1,8 @@
 ---
-title: My Second Blog Post
-author: Astro Learner
-description: "After learning some Astro, I couldn't stop!"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: Mi segunda entrada
+author: Adrián González
+description: "Después de aprender Astro, no pude parar."
 image:
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "The Astro logo on a dark background with a purple gradient arc."
