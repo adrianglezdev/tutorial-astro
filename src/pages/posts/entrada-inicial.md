@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
+title: 'Mi primera entrada'
 pubDate: 2022-07-01
-description: 'Esta e sla primera entrada de mi blog hecho con Astro.'
+description: 'Esta es la primera entrada de mi blog hecho con Astro.'
 author: 'Adrián González'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'

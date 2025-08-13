@@ -1,0 +1,12 @@
+---
+import "../styles/global.css";
+
+const { title, description, url} = Astro.props;
+---
+
+<li>
+  <a href={url} class="post-card-link">
+    {title}
+  </a>
+  <p>{description}</p>
+</li>

@@ -1,13 +1,17 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import BaseLayout from"../layouts/BaseLayout.astro";
 
 import '../styles/global.css';
 
-const { frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 const bgUrl = `url('${frontmatter.image.url}')`;
 const pageTitle = frontmatter.title;
+
+const allPosts = Object.values(
+    import.meta.glob("../pages/posts/*.md", { eager: true })
+  );
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
 ---
 <BaseLayout>
 <button class="btn_back_to_blog" onclick="history.back()" aria-label="Volver atrás">Volver
@@ -19,10 +23,18 @@ const pageTitle = frontmatter.title;
 <div id="post_data">
     <p>{frontmatter.author}</p>
     <p>-</p>
+    <p><a href=`../tags/${frontmatter.tag}`>{frontmatter.tag}</a></p>
+    <p>-</p>
     <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
 </div>
 <p>{frontmatter.description}</p>
 <slot />
+<div class="tags">
+    {tags.map((tag) => (
+      <p class="tag"><a class="tag-link" href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
+
 </BaseLayout>
 <style define:vars={{ bgImage: bgUrl }}>
     .btn_back_to_blog {
