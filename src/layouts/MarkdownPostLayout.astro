@@ -25,7 +25,7 @@ const bgUrl = `url('${post.data.image.url}')`;
       <p>
       {post.data.tags && post.data.tags.map((tag, index) => (
         <>
-          <a href={`/tags/${tag}`} class="post-tag-link">{tag}</a>
+          <a href={`/tutorial-astro/tags/${tag}`} class="post-tag-link">{tag}</a>
           {index < post.data.tags.length - 1 && <span class="tag-separator"> - </span>}
         </>
       ))}</p>
@@ -37,7 +37,7 @@ const bgUrl = `url('${post.data.image.url}')`;
 <slot />
 <div class="tags">
     {tags.map((tag) => (
-      <p class="tag"><a class="tag-link" href={`/tags/${tag}`}>{tag}</a></p>
+      <p class="tag"><a class="tag-link" href={`/tutorial-astro/tags/${tag}`}>{tag}</a></p>
     ))}
   </div>
 

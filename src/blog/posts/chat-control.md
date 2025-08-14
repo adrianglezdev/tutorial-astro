@@ -4,7 +4,7 @@ pubDate: 2024-08-14
 description: 'La Unión Europea está debatiendo una ley que permitiría escanear todos tus mensajes privados, fotos y archivos, incluso si están cifrados con extremo a extremo (E2EE), para detectar abuso sexual infantil (CSAM).'
 author: 'Adrián González'
 image:
-    url: '/control.webp'
+    url: '/tutorial-astro/control.webp'
     alt: 'Imagen de un teclado con un cono de obra con la palabra cuidado escrita simbolizando el cuidado que hay que tener a estas medidas de control que se quieren implantar.'
 tags: ["noticias"]
 ---
@@ -57,4 +57,4 @@ Se ha filtrado que el Parlamento Europeo estaría presionando al Consejo con tá
 
 ¡NO al Chat Control! 
 
-<img style="max-width: 700px" src="/control-spain.webp"/>
+<img style="max-width: 700px" src="/tutorial-astro/control-spain.webp"/>
