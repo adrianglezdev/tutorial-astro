@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi primera entrada'
 pubDate: 2022-07-01
 description: 'Esta es la primera entrada de mi blog hecho con Astro.'

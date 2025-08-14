@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi tercer post
 author: Adrián González
 description: "I had some challenges, but asking in the community really helped!"

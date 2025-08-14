@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Increíble! El cuarto post'
 author: "Adrián González"
 description: "¡Este post se muestra solo!"

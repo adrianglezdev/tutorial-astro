@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi segunda entrada
 author: Adrián González
 description: "Después de aprender Astro, no pude parar."

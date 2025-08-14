@@ -1,26 +1,36 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../layouts/BlogPost.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../layouts/BlogPost.astro";
+import { getCollection } from "astro:content";
 
-const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}));
+const allPosts = await getCollection("blog");
 const pageTitle = "Blog de aprendizaje de Astro";
-
+const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
 
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-	<p>Esta será la página donde añadiremos el contenido principal del blog.</p>
-        <p>Seguramente en el futuro simplemente sea todo el histórico de entradas y la página de inicio es donde saldrán las entradas más importantes</p>
-        <ul>
-            {allPosts.map((post) => 
-               <BlogPost 
-                    url={post.url}
-                    title={post.frontmatter.title}
-                    description={post.frontmatter.description}
-                />
-               
-            )}
-            </ul>
-
-		
+  <p>Esta será la página donde añadiremos el contenido principal del blog.</p>
+  <p>
+    Seguramente en el futuro simplemente sea todo el histórico de entradas y la
+    página de inicio es donde saldrán las entradas más importantes
+  </p>
+  <div class="tags">
+    {
+      tags.map((tag) => (
+        <p class="tag">
+          <a class="tag-link" href={`/tags/${tag}`}>
+            {tag}
+          </a>
+        </p>
+      ))
+    }
+  </div>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+      ))
+    }
+  </ul>
 </BaseLayout>
-
